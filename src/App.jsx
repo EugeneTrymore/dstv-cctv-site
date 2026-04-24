@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import ThankYou from "./pages/ThankYou";
+import Thankyou from "./pages/Thankyou";
 import Gallery from "./pages/Gallery";
 import { motion } from "framer-motion";
 
@@ -26,7 +26,7 @@ function App() {
   <Route path="/services" element={<motion.div initial={{opacity:0}} animate={{opacity:1}}><Services /></motion.div>} />
   <Route path="/about" element={<motion.div initial={{opacity:0}} animate={{opacity:1}}><About /></motion.div>} />
   <Route path="/contact" element={<motion.div initial={{opacity:0}} animate={{opacity:1}}><Contact /></motion.div>} />
-  <Route path="/thank-you" element={<motion.div initial={{opacity:0}} animate={{opacity:1}}><ThankYou /></motion.div>} />
+  <Route path="/thank-you" element={<motion.div initial={{opacity:0}} animate={{opacity:1}}><Thankyou /></motion.div>} />
   <Route path="/gallery" element={<motion.div initial={{opacity:0}} animate={{opacity:1}}><Gallery /></motion.div>} />
 </Routes>
         
