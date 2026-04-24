@@ -4,7 +4,7 @@ import React from "react";
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/27720114532"
+      href="https://wa.me/+27 64 600 3542"
       target="_blank"
       className="whatsapp-btn"
     >
