@@ -1,0 +1,33 @@
+.testimonials {
+  background: #f4f7ff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  color: #0a2cff;
+  margin-bottom: 40px;
+}
+
+.testimonial-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 300px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+}
+
+.testimonial-card h4 {
+  margin-top: 15px;
+  color: #333;
+  font-style: normal;
+}

@@ -1,0 +1,114 @@
+/* HERO SECTION */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #ffffff, #f4f7ff);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  color: #0a2cff;
+  font-size: 2.8rem;
+}
+
+.hero p {
+  color: #555;
+  margin-top: 10px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  margin-top: 25px;
+}
+
+.call-btn {
+  background: #0a2cff;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  margin-right: 12px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.call-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 44, 255, 0.2);
+}
+
+.whatsapp-btn {
+  background: #ffb300;
+  color: black;
+  border: none;
+  padding: 14px 24px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+/* SERVICES SECTION */
+/* HomeServices.css */
+
+.home-services {
+  background-color: #ffffff; /* ⚪ White */
+  color: #000000; /* ⬛ Black */
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-services h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #0a2cff; /* 🟦 Royal Blue */
+  margin-bottom: 50px;
+}
+
+.service-category h3 {
+  font-size: 2rem;
+  color: #0a2cff; /* 🟦 Royal Blue */
+  margin-bottom: 20px;
+  border-left: 6px solid #ffcc00; /* 🟡 Accent */
+  padding-left: 15px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.card {
+  flex: 1 1 250px;
+  background-color: #e6f0ff; /* 🔵 Soft Blue-Gray */
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(10, 44, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease;
+  font-weight: 500;
+  text-align: center;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(10, 44, 255, 0.25);
+  border-left: 5px solid #ffcc00; /* 🟡 Accent on hover */
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

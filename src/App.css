@@ -1,0 +1,87 @@
+/* src/App.css */
+
+/* ==================== Root Container ==================== */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ==================== Cards (shared) ==================== */
+.card {
+  flex: 1 1 250px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+/* ==================== Headings ==================== */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* h1 for section/page titles */
+h1 {
+  font-size: 3rem;
+  color: var(--royal-blue);
+}
+
+/* h2 for sub-sections */
+h2 {
+  font-size: 2.2rem;
+  color: var(--royal-blue);
+}
+
+/* h3 for card titles / small headers */
+h3 {
+  font-size: 1.8rem;
+  color: var(--royal-blue);
+}
+
+/* ==================== Buttons Global ==================== */
+button, a.button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  .call-btn,
+.quote-btn,
+.contact-form button {
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+}
+}
+
+button:hover, a.button:hover {
+  transform: translateY(-2px);
+}
+
+/* ==================== Responsive Helpers ==================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}

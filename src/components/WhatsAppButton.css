@@ -1,0 +1,21 @@
+/* src/components/WhatsAppButton.css */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #ffb300; /* Orange-Yellow */
+  padding: 16px 22px;
+  border-radius: 50px;
+  color: #111; /* Black text */
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(255, 179, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(255, 179, 0, 0.45);
+}

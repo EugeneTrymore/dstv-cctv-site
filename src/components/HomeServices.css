@@ -1,0 +1,59 @@
+/* src/components/HomeServices.css */
+
+.home-services {
+  background-color: #f4f7ff; /* Soft blue section */
+  color: #111; /* Black text */
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-services h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #0a2cff; /* Royal Blue */
+  margin-bottom: 50px;
+}
+
+.service-category h3 {
+  font-size: 2rem;
+  color: #0a2cff; /* Royal Blue */
+  margin-bottom: 20px;
+  border-left: 6px solid #ffb300; /* Accent */
+  padding-left: 15px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.card {
+  flex: 1 1 250px;
+  background-color: #ffffff; /* White card for contrast */
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(10, 44, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 500;
+  text-align: center;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(10, 44, 255, 0.25);
+  border-left: 6px solid #ffb300; /* Accent on hover */
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

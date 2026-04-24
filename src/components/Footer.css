@@ -1,0 +1,21 @@
+/* src/components/Footer.css */
+
+.footer {
+  background-color: #0a2cff; /* Royal Blue */
+  color: #ffffff; /* White text */
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  border-top: 4px solid #ffb300; /* Accent line */
+}
+
+.footer a {
+  color: #ffb300; /* Accent */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
