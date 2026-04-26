@@ -1,30 +1,41 @@
 import "./Testimonials.css";
 
 export default function Testimonials() {
-  const testimonials = [
+  const reviews = [
     {
-      name: "John M.",
-      text: "Excellent DSTV installation. Fast and professional service!",
+      name: "Naledi Mokoena",
+      role: "Boutique owner, Bedfordview",
+      text: "They cleaned up old wiring, installed eight cameras and made the remote view app simple enough for the whole team to use.",
     },
     {
-      name: "Sarah K.",
-      text: "My CCTV system works perfectly. I can monitor my shop from my phone.",
+      name: "Teboho Dlamini",
+      role: "Homeowner, Midrand",
+      text: "Our DSTV signal kept dropping after storms. ClearView replaced the damaged fittings and the picture has been perfect since.",
     },
     {
-      name: "David L.",
-      text: "Very reliable team. Affordable and high-quality work.",
+      name: "Ridwaan Patel",
+      role: "Warehouse supervisor, Jet Park",
+      text: "Fast turnaround, solid advice and a tidy installation. The night vision coverage around our loading area is excellent.",
     },
   ];
 
   return (
     <section className="testimonials">
-      <h2>What Our Clients Say</h2>
-
-      <div className="testimonial-cards">
-        {testimonials.map((t, index) => (
+      <div className="testimonial-grid">
+        {reviews.map((review, index) => (
           <div key={index} className="testimonial-card">
-            <p>"{t.text}"</p>
-            <h4>- {t.name}</h4>
+            
+            {/* ⭐ Stars */}
+            <div className="stars">★★★★★</div>
+
+            {/* 💬 Text */}
+            <p className="testimonial-text">"{review.text}"</p>
+
+            <hr />
+
+            {/* 👤 Name */}
+            <h4>{review.name}</h4>
+            <span>{review.role}</span>
           </div>
         ))}
       </div>

@@ -79,3 +79,49 @@
 .contact-form button:hover {
   background: #081acc;
 }
+/* INPUTS */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+/* FOCUS EFFECT */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #0a2cff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(10,44,255,0.1);
+}
+
+/* BUTTON */
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: #0a2cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #081acc;
+  transform: translateY(-2px);
+}
+.form-note {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #0a2cff;
+  font-weight: 500;
+}

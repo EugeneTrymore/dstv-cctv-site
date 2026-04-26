@@ -1,33 +1,62 @@
 .testimonials {
-  background: #f4f7ff;
-  padding: 60px 20px;
-  text-align: center;
+  padding: 80px 20px;
+  background: #f9fbff;
 }
 
-.testimonials h2 {
-  font-size: 2.5rem;
-  color: #0a2cff;
-  margin-bottom: 40px;
-}
+.testimonial-grid {
+  max-width: 1200px;
+  margin: auto;
 
-.testimonial-cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
 }
 
 .testimonial-card {
-  background: white;
+  background: #fff;
   padding: 25px;
   border-radius: 15px;
-  max-width: 300px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  font-style: italic;
+
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+
+  transition: 0.3s ease;
 }
 
-.testimonial-card h4 {
-  margin-top: 15px;
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Stars */
+.stars {
+  color: #ffb300;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+/* Text */
+.testimonial-text {
   color: #333;
-  font-style: normal;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Divider */
+.testimonial-card hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 15px 0;
+}
+
+/* Name */
+.testimonial-card h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #111;
+}
+
+/* Role */
+.testimonial-card span {
+  font-size: 0.85rem;
+  color: #777;
 }

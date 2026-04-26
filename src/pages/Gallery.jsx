@@ -1,81 +1,141 @@
 import "./Gallery.css";
 import { useState } from "react";
-
-// IMPORT IMAGES
-import cctv1 from "../assets/cctv.jpg";
-import cctv2 from "../assets/technician.jpg";
-import dstv1 from "../assets/dstv.jpg";
+import g1 from "../assets/gallery1.jpg";
+import g2 from "../assets/gallery2.jpg";
+import g3 from "../assets/gallery3.jpg";
+import g4 from "../assets/gallery4.jpg";
+import g5 from "../assets/gallery5.jpg";
+import g6 from "../assets/gallery6.jpg";
+import g7 from "../assets/alarm1.jpg";
+import g8 from "../assets/alarm2.jpg";
+import g9 from "../assets/alarm3.jpg";
 
 export default function Gallery() {
-  const [selected, setSelected] = useState(null);
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("All");
 
-  const images = [
-    { src: cctv1, category: "cctv" },
-    { src: cctv2, category: "cctv" },
-    { src: dstv1, category: "dstv" },
-  ];
+ const projects = [
+  // ================= CCTV (3) =================
+  {
+    title: "Retail camera refresh",
+    type: "CCTV",
+    location: "Cape Town",
+    desc: "Full dome camera setup with mobile viewing.",
+    image: g5,
+  },
+  {
+    title: "Office CCTV installation",
+    type: "CCTV",
+    location: "Cape Town",
+    desc: "Multi-camera system with remote access.",
+    image: g4,
+  },
+  {
+    title: "Warehouse surveillance",
+    type: "CCTV",
+    location: "Cape Town",
+    desc: "Wide coverage security system.",
+    image: g5,
+  },
 
-  const filteredImages =
-    filter === "all"
-      ? images
-      : images.filter((img) => img.category === filter);
+  // ================= DSTV (3) =================
+  {
+    title: "Townhouse DSTV alignment",
+    type: "DSTV",
+    location: "Cape Town",
+    desc: "Signal restoration and clean installation.",
+    image: g7,
+  },
+  {
+    title: "Apartment DSTV setup",
+    type: "DSTV",
+    location: "Cape Town",
+    desc: "Clean dish installation with HD signal.",
+    image: g2,
+  },
+  {
+    title: "DSTV signal repair",
+    type: "DSTV",
+    location: "Cape Town",
+    desc: "Quick fix and signal boost service.",
+    image: g6,
+  },
+
+  // ================= ALARM (3) =================
+  {
+    title: "Perimeter alarm upgrade",
+    type: "Alarm",
+    location: "Cape Town",
+    desc: "Outdoor beams with night detection.",
+    image: g7,
+  },
+  {
+    title: "Home alarm system",
+    type: "Alarm",
+    location: "Cape Town",
+    desc: "Indoor + outdoor smart alarm system.",
+    image: g8,
+  },
+  {
+    title: "Business alarm installation",
+    type: "Alarm",
+    location: "Cape Town",
+    desc: "Full security alarm setup for offices.",
+    image: g9,
+  },
+];
+  const filtered =
+    filter === "All"
+      ? projects
+      : projects.filter((p) => p.type === filter);
 
   return (
     <div className="gallery-page">
-      <h1>Our Work</h1>
-      <p className="subtitle">
-        Real installations. Real results.
-      </p>
 
-      {/* FILTER BUTTONS */}
-      <div className="filters">
-        <button
-          className={filter === "all" ? "active" : ""}
-          onClick={() => setFilter("all")}
-        >
-          All
-        </button>
+      {/* SEARCH + FILTER */}
+      <div className="gallery-top">
 
-        <button
-          className={filter === "cctv" ? "active" : ""}
-          onClick={() => setFilter("cctv")}
-        >
-          CCTV
-        </button>
+        <input
+          type="text"
+          placeholder="Search by project type or area"
+          className="search"
+        />
 
-        <button
-          className={filter === "dstv" ? "active" : ""}
-          onClick={() => setFilter("dstv")}
-        >
-          DSTV
-        </button>
+        <div className="filters">
+          {["All", "CCTV", "DSTV", "Alarm"].map((f) => (
+            <button
+              key={f}
+              className={filter === f ? "active" : ""}
+              onClick={() => setFilter(f)}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
+
       </div>
 
-      {/* GALLERY */}
+      {/* CARDS */}
       <div className="gallery-grid">
-        {filteredImages.map((img, index) => (
-          <div
-            key={index}
-            className="gallery-item"
-            onClick={() => setSelected(img.src)}
-          >
-            <img src={img.src} alt={img.category} />
-            <div className="overlay">
-              <p>{img.category.toUpperCase()}</p>
+        {filtered.map((item, i) => (
+          <div key={i} className="gallery-card">
+
+            <div
+              className="card-top"
+              style={{ backgroundImage: `url(${item.image})` }}
+            >
+              <span className="tag">{item.type}</span>
+              <h3>{item.title}</h3>
             </div>
+
+            <div className="card-bottom">
+              <h4>{item.location}</h4>
+              <p>{item.desc}</p>
+            </div>
+
           </div>
         ))}
       </div>
 
-      {/* LIGHTBOX */}
-      {selected && (
-        <div className="lightbox" onClick={() => setSelected(null)}>
-          <div className="lightbox-content">
-            <img src={selected} alt="Large view" />
-          </div>
-        </div>
-      )}
     </div>
   );
 }

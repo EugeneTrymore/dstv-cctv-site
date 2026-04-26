@@ -1,82 +1,166 @@
-/* src/pages/Services.css */
+
+/* ================= PAGE ================= */
 
 .services-page {
-  background-color: #ffffff; /* White */
-  color: #111; /* Black text */
-  padding: 60px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0b1220;
+  color: #fff;
+  padding: 80px 20px;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.services-page h1 {
+/* HERO */
+.services-hero {
   text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-hero h1 {
   font-size: 3rem;
-  color: #0a2cff; /* Royal Blue */
-  margin-bottom: 50px;
+  color: #ffb300;
 }
 
-.service-category h2 {
-  font-size: 2rem;
-  color: #0a2cff; /* Royal Blue */
-  margin-bottom: 20px;
-  border-left: 6px solid #ffb300; /* Accent */
-  padding-left: 15px;
+.services-hero p {
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 10px auto;
 }
 
-.cards {
+/* ================= SERVICE CARD ================= */
+
+.service-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  margin-bottom: 50px;
-}
-
-.card {
-  flex: 1 1 250px;
-  background-color: #e6f0ff; /* Soft Blue-Gray */
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(10, 44, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-weight: 500;
-  text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(10, 44, 255, 0.25);
-  border-left: 6px solid #ffb300; /* Accent on hover */
-}
-
-@media (max-width: 768px) {
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-  }
-}
-
-.service-block {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 50px;
+  gap: 40px;
+  margin-bottom: 80px;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.service-block img {
-  width: 350px;
-  border-radius: 15px;
+.service-card.right {
+  flex-direction: row-reverse;
 }
 
+/* IMAGE */
+.service-img {
+  position: relative;
+}
+
+.service-img img {
+  width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  transition: 0.4s ease;
+}
+
+.service-img img:hover {
+  transform: scale(1.03);
+}
+
+/* PRICE BADGE */
+.price-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ffb300;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* CONTENT */
+.service-content {
+  flex: 1;
+}
+
+.icon-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.service-content h2 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.desc {
+  color: #cbd5e1;
+  margin: 10px 0 20px;
+}
+
+/* FEATURES */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature {
+  background: #1e293b;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+/* BUTTON */
+.premium-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #ffb300;
+  color: #000;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.premium-btn:hover {
+  transform: translateY(-3px);
+}
+
+.premium-btn.secondary {
+  background: #0a2cff;
+  color: #fff;
+}
+
+/* ================= EXTRA ================= */
+
+.premium-extra {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.glass-box {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.steps div {
+  margin: 10px 0;
+  color: #cbd5e1;
+}
+
+/* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
-  .service-block {
-    flex-direction: column;
+  .service-card {
+    flex-direction: column !important;
     text-align: center;
   }
 
-  .service-block img {
+  .service-img img {
     width: 100%;
+  }
+
+  .premium-extra {
+    grid-template-columns: 1fr;
   }
 }

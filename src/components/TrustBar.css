@@ -1,0 +1,10 @@
+.trust-bar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background: #0a2cff;
+  color: white;
+  font-weight: 500;
+  flex-wrap: wrap;
+}

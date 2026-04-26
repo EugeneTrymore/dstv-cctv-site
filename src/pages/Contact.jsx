@@ -16,38 +16,69 @@ export default function Contact() {
             <p>📞 +27 64 600 3542</p>
             <p>📧 info@clearviewsecurity.co.za</p>
             <p>📍 Cape Town, Western Cape</p>
+            <p className="form-note">
+  ⚡ We usually respond within 30 minutes (even faster on WhatsApp)
+</p>
           </div>
         </div>
+  
 
         <form
-          action="https://formspree.io/f/xgorreyd"
-          method="POST"
-          className="contact-form"
-        >
-          <input
-           type="hidden" 
-           name="_next" 
-           value="http://localhost:5173/thank-you" 
-           />
-          <h2>Request a Quote</h2>
+  action="https://formspree.io/f/xgorreyd"
+  method="POST"
+  className="contact-form"
+>
+  {/* Redirect after submit */}
+  <input
+    type="hidden"
+    name="_next"
+    value="https://your-site.vercel.app/thank-you"
+  />
 
-          <div className="form-group">
-            <label>Your Name</label>
-            <input type="text" name="name" required />
-          </div>
+  <h2>Request a Quote</h2>
 
-          <div className="form-group">
-            <label>Phone Number</label>
-            <input type="tel" name="phone" required />
-          </div>
+  {/* NAME */}
+  <div className="form-group">
+    <label>Your Name</label>
+    <input type="text" name="name" placeholder="John Doe" required />
+  </div>
 
-          <div className="form-group">
-            <label>Your Message</label>
-            <textarea name="message" rows="4" required></textarea>
-          </div>
+  {/* PHONE */}
+  <div className="form-group">
+    <label>Phone Number</label>
+    <input type="tel" name="phone" placeholder="+27..." required />
+  </div>
 
-          <button type="submit">Send Request</button>
-        </form>
+  {/* EMAIL (NEW) */}
+  <div className="form-group">
+    <label>Email Address</label>
+    <input type="email" name="email" placeholder="you@email.com" required />
+  </div>
+
+  {/* SERVICE TYPE (VERY IMPORTANT) */}
+  <div className="form-group">
+    <label>Service Needed</label>
+    <select name="service" required>
+      <option value="">Select a service</option>
+      <option>DSTV Installation</option>
+      <option>CCTV Installation</option>
+      <option>Repairs / Maintenance</option>
+    </select>
+  </div>
+
+  {/* MESSAGE */}
+  <div className="form-group">
+    <label>Your Message</label>
+    <textarea
+      name="message"
+      rows="4"
+      placeholder="Tell us what you need..."
+      required
+    ></textarea>
+  </div>
+
+  <button type="submit">Get Free Quote</button>
+</form>
 
       </div>
     </div>

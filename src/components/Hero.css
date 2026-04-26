@@ -1,96 +1,140 @@
-/* src/components/Hero.css */
-
+/* ================= HERO SECTION ================= */
 .hero {
-  background: linear-gradient(to bottom, #ffffff, #f4f7ff); /* White to soft blue */
-  padding: 80px 20px;
-}
-
-.hero-container {
-  max-width: 1200px;
-  margin: auto;
+  position: relative;
+  min-height: 90vh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
 }
 
+/* BLURRED BACKGROUND IMAGE */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("/hero-bg.jpg") center/cover no-repeat;
+
+  filter: blur(12px);
+  transform: scale(1.1);
+
+  z-index: 0;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* CONTENT */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* TEXT BOX (GLASS EFFECT) */
 .hero-text {
-  flex: 1 1 500px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  color: #ffffff;
 }
 
+/* TITLE */
 .hero-text h1 {
   font-size: 3rem;
-  color: #0a2cff; /* Royal Blue */
   margin-bottom: 20px;
 }
 
+/* DESCRIPTION */
 .hero-text p {
   font-size: 1.2rem;
-  color: #111; /* Black */
   margin-bottom: 30px;
-  line-height: 1.6;
+  color: #e5e7eb;
 }
 
+/* BUTTONS */
 .hero-buttons {
   display: flex;
+  justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.call-btn,
-.quote-btn {
-  padding: 15px 30px;
-  border-radius: 8px;
+/* PRIMARY BUTTON */
+.btn {
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: #0a2cff;
+  color: #ffffff;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px rgba(10, 44, 255, 0.3);
 }
 
-.call-btn {
-  background-color: #ffb300; /* Orange-Yellow */
-  color: #111; /* Black text */
+.btn:hover {
+  transform: translateY(-3px);
+  background: #081acc;
 }
 
-.call-btn:hover {
-  background-color: #e6a800;
-  transform: translateY(-2px);
+/* SECONDARY BUTTON */
+.btn.secondary {
+  background: #ffb300;
+  color: #000;
 }
 
-.quote-btn {
-  background-color: #0a2cff; /* Royal Blue */
-  color: #ffffff; /* White text */
+.btn.secondary:hover {
+  background: #e6a800;
 }
 
-.quote-btn:hover {
-  background-color: #081acc;
-  transform: translateY(-2px);
+/* DARK MODE SUPPORT */
+body.dark .hero-text {
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.hero-image {
-  flex: 1 1 400px;
-  text-align: center;
+body.dark .hero::after {
+  background: rgba(0, 0, 0, 0.65);
 }
 
-.hero-image img {
-  max-width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 15px 40px rgba(10, 44, 255, 0.15);
-}
-
-/* Responsive */
+/* MOBILE */
 @media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
-  .hero-buttons {
-    justify-content: center;
+  .hero-text {
+    padding: 25px;
   }
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
+  background: url("/hero-bg.jpg") center/cover no-repeat;
+
+  filter: blur(6px);
+
+  transform: scale(1.1);
+  animation: heroZoom 20s ease-in-out infinite alternate;
+
+  z-index: 0;
+}
+@keyframes heroZoom {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
